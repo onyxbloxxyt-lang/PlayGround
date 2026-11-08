@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10150f">
+  <title>Blocksmith — AI Add-on Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Blocksmith home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>blocksmith<span class="brand-dot">.</span></span></a>
+    <div class="workspace-label">WORKSPACE</div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-view="create"><span class="nav-icon">✳</span> Create <span class="nav-new">NEW</span></button>
+      <button class="nav-link" data-view="explore"><span class="nav-icon">▦</span> Explore</button>
+      <button class="nav-link" data-view="saved"><span class="nav-icon">♡</span> Saved <span class="saved-count">0</span></button>
+    </nav>
+    <div class="sidebar-divider"></div>
+    <div class="workspace-label">YOUR STUDIO</div>
+    <div class="recent-list" id="recent-list"><div class="empty-recent">Your creations will<br>show up here.</div></div>
+    <div class="sidebar-bottom">
+      <div class="tip-card"><span class="tip-spark">✦</span><strong>Good ideas build worlds.</strong><p>Describe your dream add-on. We'll help you make it real.</p></div>
+      <button class="profile"><span class="avatar">B</span><span class="profile-copy"><strong>Block builder</strong><small>Free plan</small></span><span class="more">···</span></button>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar"><div class="crumb"><span>Studio</span><b>/</b><strong id="top-title">Create</strong></div><div class="top-actions"><span class="status-pill"><span class="status-dot"></span> All systems ready</span><button class="help-btn" id="help-btn" aria-label="Help">?</button></div></header>
+    <div class="page-wrap">
+      <section class="view active" id="create-view">
+        <div class="hero"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-star">✦</span> YOUR NEXT WORLD STARTS HERE</div><h1>Dream it.<br><span>Block it.</span></h1><p>Turn your ideas into Minecraft add-ons with a little help from AI. No code, just creativity.</p><div class="hero-meta"><span class="meta-icon">◈</span> Built for Minecraft Bedrock Edition</div></div><div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="floating-block block-one"><span></span></div><div class="floating-block block-two"><span></span></div><div class="floating-block block-three"><span></span></div><div class="art-platform"><i></i><i></i><i></i><i></i></div><div class="art-label">MADE OF<br><b>IMAGINATION</b></div></div></div>
+        <div class="section-heading"><div><div class="eyebrow muted-eyebrow">THE FUN PART</div><h2>What are we making?</h2></div><span class="step-count">01 <i>/</i> 02</span></div>
+        <div class="type-grid" role="group" aria-label="Add-on type">
+          <button class="type-card selected" data-type="creature"><span class="type-icon creature-icon">♟</span><span class="type-card-copy"><strong>New creature</strong><small>Bring a new mob to life</small></span><span class="radio-dot"></span></button>
+          <button class="type-card" data-type="item"><span class="type-icon item-icon">✦</span><span class="type-card-copy"><strong>Custom item</strong><small>Tools, weapons &amp; more</small></span><span class="radio-dot"></span></button>
+          <button class="type-card" data-type="world"><span class="type-icon world-icon">▧</span><span class="type-card-copy"><strong>World &amp; blocks</strong><small>Make a place of your own</small></span><span class="radio-dot"></span></button>
+        </div>
+        <div class="builder-grid">
+          <section class="prompt-panel panel"><div class="panel-title"><div><span class="panel-step">1</span><div><h3>Describe your idea</h3><p>The more detail, the more magical the result.</p></div></div><span class="ai-badge"><span>✦</span> AI POWERED</span></div><label class="sr-only" for="idea">Describe your add-on idea</label><textarea id="idea" maxlength="400" placeholder="A tiny mossy fox that glows at night and leaves flowers wherever it walks..."></textarea><div class="prompt-footer"><div class="suggestions"><span>Try:</span><button class="suggestion" data-prompt="A friendly crystal dragon that guards a cave and drops glowing scales">Crystal dragon</button><button class="suggestion" data-prompt="A legendary sky sword that creates a burst of wind when you swing it">Sky sword</button><button class="suggestion" data-prompt="A tiny mossy fox that glows at night and leaves flowers wherever it walks">Mossy fox</button></div><span class="char-count"><b id="char-count">0</b>/400</span></div></section>
+          <section class="settings-panel panel"><div class="panel-title"><div><span class="panel-step">2</span><div><h3>Set the vibe</h3><p>Choose a style for your creation.</p></div></div></div><label class="field-label" for="style">ART STYLE</label><div class="select-wrap"><select id="style"><option value="Pixel-perfect">Pixel-perfect</option><option value="Cute & cozy">Cute & cozy</option><option value="Dark fantasy">Dark fantasy</option><option value="Bright & colorful">Bright & colorful</option></select><span>⌄</span></div><label class="field-label" for="rarity">RARITY</label><div class="rarity-options"><button class="rarity selected" data-rarity="Common"><span class="rarity-dot common"></span>Common</button><button class="rarity" data-rarity="Rare"><span class="rarity-dot rare"></span>Rare</button><button class="rarity" data-rarity="Legendary"><span class="rarity-dot legendary"></span>Legendary</button></div></section>
+        </div>
+        <div class="build-row"><div class="build-note"><span>✦</span><span><strong>Made for your world.</strong><small>Download as a Bedrock .mcaddon pack</small></span></div><button class="build-button" id="build-button"><span>✦</span> Generate my add-on <span class="button-arrow">→</span></button></div>
+        <section class="community-section"><div class="section-heading community-heading"><div><div class="eyebrow muted-eyebrow">FROM THE COMMUNITY</div><h2>Worlds made by players</h2></div><button class="text-link" data-go="explore">Explore all <span>→</span></button></div><div class="addon-grid featured-grid" id="featured-grid"></div></section>
+      </section>
+      <section class="view" id="explore-view"><div class="page-intro"><div class="eyebrow muted-eyebrow">THE COMMUNITY SHELF</div><h1>Find your next <span>favorite.</span></h1><p>Browse little worlds and big ideas made by fellow builders.</p></div><div class="explore-controls"><div class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search add-ons, creatures, creators..."></div><div class="filter-pills"><button class="filter active" data-filter="All">All creations</button><button class="filter" data-filter="Creature">Creatures</button><button class="filter" data-filter="Item">Items</button><button class="filter" data-filter="World">Worlds</button></div><select class="sort-select" id="sort-select" aria-label="Sort creations"><option value="popular">Most loved</option><option value="newest">Recently added</option></select></div><div class="addon-grid explore-grid" id="explore-grid"></div></section>
+      <section class="view" id="saved-view"><div class="page-intro"><div class="eyebrow muted-eyebrow">YOUR COLLECTION</div><h1>Saved for <span>later.</span></h1><p>Keep all your favorite community creations in one place.</p></div><div class="addon-grid" id="saved-grid"></div><div class="empty-state" id="saved-empty"><div class="empty-icon">♡</div><h2>Nothing saved just yet</h2><p>Tap the heart on any add-on to keep it close.</p><button class="outline-button" data-go="explore">Explore the community →</button></div></section>
+      <footer class="footer"><span>© 2025 BLOCKSMITH STUDIO</span><span>Made for the love of making <b>✦</b></span></footer>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal-backdrop"><section class="result-modal" role="dialog" aria-modal="true" aria-labelledby="result-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div class="result-spark">✦</div><div class="eyebrow muted-eyebrow">YOUR IDEA, MADE REAL</div><h2 id="result-title">Your add-on is ready.</h2><p id="result-description"></p><div class="result-preview"><div class="result-art" id="result-art">✦</div><div><span class="result-type" id="result-type">CREATURE · RARE</span><strong id="result-name">Mossy fox</strong><small id="result-style">Pixel-perfect style</small></div><span class="ready-tag">READY</span></div><div class="modal-actions"><button class="download-button" id="download-button">↓ &nbsp; Download .mcaddon</button><button class="share-button" id="share-button">Share with community ↗</button></div><div class="download-note"><span>◈</span> Compatible with Minecraft Bedrock Edition</div></section></div>
+  <div class="modal-backdrop" id="help-backdrop"><section class="help-modal" role="dialog" aria-modal="true"><button class="modal-close" id="help-close" aria-label="Close">×</button><div class="eyebrow muted-eyebrow">QUICK GUIDE</div><h2>From idea to add-on.</h2><div class="guide-step"><b>01</b><span><strong>Tell us what you imagine</strong><small>Describe a creature, item, or place you'd love in your world.</small></span></div><div class="guide-step"><b>02</b><span><strong>Make it yours</strong><small>Pick an art style and rarity, then generate your pack.</small></span></div><div class="guide-step"><b>03</b><span><strong>Download &amp; play</strong><small>Import the .mcaddon file into Minecraft Bedrock Edition.</small></span></div><p class="guide-foot">This demo generates a starter pack structure locally in your browser. ✦</p></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
