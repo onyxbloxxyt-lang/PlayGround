@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#fff8ed">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23fff0d6'/%3E%3Cpath d='M32 9c-10 0-19 18-19 32a19 19 0 0 0 38 0C51 27 42 9 32 9Z' fill='%23fff' stroke='%23e3a846' stroke-width='4'/%3E%3Ccircle cx='39' cy='31' r='3' fill='%23f2b94b'/%3E%3C/svg%3E">
+  <title>Build an Egg!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" id="homeBtn" aria-label="My worlds"><span class="brand-mark">🥚</span><span>build an <b>egg!</b><small>YOUR LITTLE WORLD BUILDER</small></span></button>
+      <div class="top-actions"><span class="save-status"><i></i> Saved on this device</span><button class="icon-btn" id="soundBtn" title="Toggle sound">🔊</button><button class="avatar" title="Your profile">🐥</button></div>
+    </header>
+    <main id="app"></main>
+    <div id="toast" class="toast" role="status"></div>
+    <div id="modalRoot"></div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
